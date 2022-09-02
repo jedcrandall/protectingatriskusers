@@ -19,7 +19,7 @@ def comparethem(num1, num2):
     return float(output)
 
 
-# Again, if to get the inputs in terms of apps and app data in JSON format, contact jedimaestro@asu.edu
+# Again, to get the inputs in terms of apps and app data in JSON format, contact jedimaestro@asu.edu
 data = json.load(open('/home/jedi/tmp/anzhitarredandfeathered/json.json'))
 Lines = []
 APKnums = []

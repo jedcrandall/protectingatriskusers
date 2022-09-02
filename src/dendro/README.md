@@ -12,3 +12,20 @@ This is the source code used to make dendrograms like [This one]() for [this pro
 
 It's unlikely that it will run unmodified on your machine.  README is currently
 a work in progress...
+
+[](https://github.com/zgkom/anzhi_apk_download)
+
+```bash
+rm -rf /tmp/papk/*
+rm -rf /tmp/papk/.*
+timeout 1m unzip $1 -d /tmp/papk/
+mkdir /tmp/papk/jadxoutput
+pushd .
+cd /tmp/papk/jadxoutput
+timeout 10m /home/jedi/jadx/build/jadx/bin/jadx $1
+cd /tmp/papk/
+find . > filelist.txt
+popd
+timeout 1m tar -cz /tmp/papk > /home/jedi/tmp/anzhitarredandfeathered/$thename.tgz
+tar --to-stdout -xzf /home/jedi/tmp/anzhitarredandfeathered/$thename.tgz | strings -n 10 | tr -cd [:alpha:] > /home/jedi/tmp/anzhitarredandfeathered/$thename.tgz.txt
+```
