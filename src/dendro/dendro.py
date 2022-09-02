@@ -19,7 +19,9 @@ def comparethem(num1, num2):
     return float(output)
 
 
-# Again, to get the inputs in terms of apps and app data in JSON format, contact jedimaestro@asu.edu
+# Again, to get the inputs in terms of apps and app data in JSON format,
+# contact jedimaestro@asu.edu, or use...
+# https://github.com/zgkom/anzhi_apk_download
 data = json.load(open('/home/jedi/tmp/anzhitarredandfeathered/json.json'))
 Lines = []
 APKnums = []
@@ -32,7 +34,7 @@ for i in data:
     s = s.replace('万','0000')
     s = s.replace('亿','00000000')
     if len(s) > 1 and i['download'][34:-4] not in APKnums:
-        if int(s) > 30000000 or '浏览器' in i['cat']:
+        if int(s) > 10000000 or '浏览器' in i['cat']:
             if exists('/home/jedi/tmp/anzhitarredandfeathered/strsonly/' + i['download'][34:-4] + '.apk.tgz.txt'):
                 bla = i['name'] + ' (' + s2 + ', ' + i['cat'] + ')'
                 print(bla)
