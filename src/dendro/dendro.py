@@ -81,6 +81,6 @@ with concurrent.futures.ThreadPoolExecutor(max_workers = 8) as executor:
 
 print(X)
 fig = ff.create_dendrogram(X, orientation='left', labels=Lines)
-fig.update_layout(width=1600, height=1200)
+fig.update_layout(width=1600, height=1800)
 fig.show()
 
