@@ -1,7 +1,7 @@
 
 # Dendrogram for comparing Android apps
 
-This is the source code used to make dendrograms like [This one]() for [this
+This is the source code used to make dendrograms like [This one](anzhiandbuiltins.png) for [this
 project](https://github.com/jedcrandall/protectingatriskusers).  It's not a
 polished product by far, but hopefully is useful to someone.
 
@@ -13,7 +13,12 @@ polished product by far, but hopefully is useful to someone.
 ## Usage
 
 It's unlikely that it will run unmodified on your machine.  You'll need APKs
-and data scraped from the Anzhi app store and then you'll need to extract strings from them in a special way.  Reach out to [me](https://jedcrandall.github.io/) and I can provide files or assistance in generating them.  Basically, you scrape the data with [this](https://github.com/zgkom/anzhi_apk_download) and then do something like:
+and data scraped from the Anzhi app store and then you'll need to extract
+strings from them in a special way.  Reach out to
+[me](https://jedcrandall.github.io/) and I can provide files or assistance in
+generating them.  Basically, you scrape the data with
+[this](https://github.com/zgkom/anzhi_apk_download) and then do something like
+this to make the ``tarred and feathered'' versions of the APKs:
 
 ```bash
 rm -rf /tmp/papk/*
@@ -37,5 +42,5 @@ gcc compare.c -o compare -lm
 python3 dendro.py
 ```
 
-It'll open the dendrogram in a browser so you can play with sizing and such and
-then export.
+It'll open the dendrogram in a browser so you can play with zooming and such
+and then export.
